@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECTLC Wizard of Oz Planning Session</title>
+<style>
+  @page {
+    size: Letter;
+    margin: 0.55in 0.6in 0.6in;
+  }
+
+  :root {
+    --green: #0f5a3a;
+    --dark-green: #083b27;
+    --gold: #b98a24;
+    --cream: #fbf8ef;
+    --ink: #202620;
+    --muted: #5f665f;
+    --line: #cfc8b5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.36;
+  }
+
+  body {
+    max-width: 8.5in;
+    margin: 0 auto;
+  }
+
+  .document {
+    width: 100%;
+  }
+
+  .top-rule {
+    height: 8px;
+    background: linear-gradient(90deg, var(--dark-green), var(--green), var(--gold));
+    margin-bottom: 14px;
+  }
+
+  .header {
+    border: 1.5px solid var(--green);
+    border-left: 8px solid var(--gold);
+    background: var(--cream);
+    padding: 14px 16px 12px;
+    margin-bottom: 14px;
+  }
+
+  .eyebrow {
+    color: var(--green);
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  h1 {
+    color: var(--dark-green);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21pt;
+    line-height: 1.08;
+    margin: 0 0 6px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 10.5pt;
+    margin: 0;
+  }
+
+  .address-block {
+    display: grid;
+    grid-template-columns: 0.72in 1fr;
+    gap: 3px 8px;
+    margin: 0 0 14px;
+    padding: 9px 12px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .address-label {
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  p {
+    margin: 0 0 8px;
+  }
+
+  .intro {
+    font-size: 10.8pt;
+  }
+
+  .callout {
+    border: 1px solid #b9c5bc;
+    border-left: 5px solid var(--green);
+    background: #f4f8f5;
+    padding: 9px 11px;
+    margin: 10px 0 13px;
+  }
+
+  .callout strong {
+    color: var(--dark-green);
+  }
+
+  h2 {
+    color: white;
+    background: var(--green);
+    font-size: 12.5pt;
+    line-height: 1.2;
+    margin: 15px 0 8px;
+    padding: 6px 10px;
+    border-left: 5px solid var(--gold);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    color: var(--dark-green);
+    font-size: 11.2pt;
+    margin: 11px 0 5px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--line);
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  ul, ol {
+    margin: 5px 0 9px 20px;
+    padding: 0;
+  }
+
+  li {
+    margin: 2px 0;
+  }
+
+  .two-column {
+    columns: 2;
+    column-gap: 28px;
+  }
+
+  .two-column li {
+    break-inside: avoid;
+  }
+
+  .numbered-section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .quote {
+    margin: 9px 14px;
+    padding: 9px 12px;
+    border-left: 4px solid var(--gold);
+    background: #fffaf0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+  }
+
+  .announcement {
+    border: 1.5px solid var(--gold);
+    background: #fffdf7;
+    padding: 12px 14px;
+    margin: 9px 0 12px;
+  }
+
+  .announcement p:last-child {
+    margin-bottom: 0;
+  }
+
+  .checklist {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  .checklist li {
+    position: relative;
+    padding-left: 19px;
+    margin: 4px 0;
+  }
+
+  .checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: var(--green);
+    font-size: 12pt;
+  }
+
+  .signature {
+    margin-top: 18px;
+  }
+
+  .signature-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--dark-green);
+  }
+
+  .footer-note {
+    margin-top: 12px;
+    border-top: 1px solid var(--line);
+    padding-top: 6px;
+    color: var(--muted);
+    font-size: 8.5pt;
+    text-align: center;
+  }
+
+  .page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  .keep-together {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  @media print {
+    body {
+      max-width: none;
+    }
+
+    .top-rule {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .header,
+    .callout,
+    h2,
+    .announcement {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="document">
+
+  <div class="top-rule"></div>
+
+  <header class="header">
+    <div class="eyebrow">ECTLC Participant-Led Production</div>
+    <h1>The Wizard of Oz Planning Session</h1>
+    <p class="subtitle">Planning structure, key questions, and house meeting announcement preparation</p>
+  </header>
+
+  <section class="address-block">
+    <div class="address-label">To:</div>
+    <div>Yezlyn and Jazmin</div>
+    <div class="address-label">CC:</div>
+    <div>Sola and Lew</div>
+    <div class="address-label">From:</div>
+    <div>Glenn Morgan</div>
+    <div class="address-label">Subject:</div>
+    <div>Wizard of Oz Planning Session and House Meeting Announcement</div>
+  </section>
+
+  <p class="intro">Yezlyn and Jazmin,</p>
+
+  <p>As we prepare for our first planning session, I want us to keep the purpose and setting of this production clear. This will be a <strong>participant-led ECTLC production</strong>, planned and carried out primarily by the men, women, and families living here.</p>
+
+  <p>We are not trying to create a professional theater production. The goal is to give participants an opportunity to work together, use their talents, try something new, and create an event the entire ECTLC community can enjoy and be proud of.</p>
+
+  <p>Staff may provide approval, guidance, access, and support, but participants should take ownership of the planning, rehearsals, acting, music, costumes, sets, technology, and event operations.</p>
+
+  <div class="callout">
+    <strong>Goal of the Planning Session:</strong> By the end of the meeting, we need enough information to make a clear announcement at the combined house meeting.
+  </div>
+
+  <p>Everyone hearing the announcement should understand:</p>
+  <ul>
+    <li>What we are doing</li>
+    <li>Who can participate</li>
+    <li>What types of help are needed</li>
+    <li>What the commitment will be</li>
+    <li>How and when to sign up</li>
+    <li>When the first meeting or rehearsal will take place</li>
+  </ul>
+
+  <h2>Proposed Planning Session Structure</h2>
+
+  <div class="numbered-section">
+    <h3>1. Agree on the Vision</h3>
+    <p>We should begin by agreeing on what success looks like.</p>
+    <ul>
+      <li>Is this primarily a community-building activity, a performance, or both?</li>
+      <li>Are we attempting the full musical or a shorter ECTLC version?</li>
+      <li>How long should the final production be?</li>
+      <li>Will the production include acting, singing, dancing, narration, or a combination?</li>
+      <li>Will the audience be limited to ECTLC participants and staff, or will families and outside guests be invited?</li>
+      <li>Is the July 17 performance date firm?</li>
+    </ul>
+    <p>Given the short preparation period and the fact that participants have work, classes, appointments, family responsibilities, and program requirements, I believe we should seriously consider a <strong>shortened production that we can do well</strong>.</p>
+  </div>
+
+  <div class="numbered-section">
+    <h3>2. Identify Participant Leadership</h3>
+    <p>We need to determine who will take responsibility for each part of the production.</p>
+    <ul class="two-column">
+      <li>Overall production coordinator</li>
+      <li>Director</li>
+      <li>Assistant director or stage manager</li>
+      <li>Music coordinator</li>
+      <li>Rehearsal coordinator</li>
+      <li>Cast and sign-up coordinator</li>
+      <li>Costumes and makeup</li>
+      <li>Sets and props</li>
+      <li>Sound, microphones, and projection</li>
+      <li>Children and family participation</li>
+      <li>Front-of-house, seating, and ushers</li>
+      <li>Setup and cleanup</li>
+    </ul>
+
+    <p>One person does not need to do everything. The goal is to divide the work among participants based on interest, experience, and reliability.</p>
+
+    <p>We also need to decide:</p>
+    <ul>
+      <li>Who will make final decisions when the group disagrees?</li>
+      <li>Who will maintain the schedule?</li>
+      <li>Who will communicate rehearsal changes?</li>
+      <li>Who will report needs or problems to staff?</li>
+      <li>Who will be the main contact at the Front Lobby?</li>
+    </ul>
+  </div>
+
+  <div class="numbered-section">
+    <h3>3. Decide How People Can Participate</h3>
+    <p>The announcement should make clear that this is not only for actors or singers.</p>
+
+    <ul class="two-column">
+      <li>Speaking roles</li>
+      <li>Singing roles</li>
+      <li>Ensemble or chorus</li>
+      <li>Dancing or movement</li>
+      <li>Narration</li>
+      <li>Stage crew</li>
+      <li>Props</li>
+      <li>Costumes</li>
+      <li>Makeup</li>
+      <li>Set construction</li>
+      <li>Sound and audiovisual support</li>
+      <li>Ushering</li>
+      <li>Programs and signs</li>
+      <li>Photography or video</li>
+      <li>Setup and cleanup</li>
+    </ul>
+
+    <p>Questions to answer:</p>
+    <ul>
+      <li>Does everyone need to audition?</li>
+      <li>Can people join the ensemble without auditioning?</li>
+      <li>Can someone volunteer only for backstage work?</li>
+      <li>Can staff participate?</li>
+      <li>What ages of children may participate?</li>
+      <li>Will children need a parent or approved adult present?</li>
+      <li>Who will decide which participant receives each role?</li>
+      <li>Will major roles have backups or understudies?</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Shelter-specific planning consideration:</strong> We should avoid building the entire production around one person. Participants may obtain employment, change schedules, leave the program, become unavailable, or have other responsibilities. Major roles and essential production duties should have backup plans.
+    </div>
+  </div>
+
+  <div class="numbered-section">
+    <h3>4. Establish the Commitment</h3>
+    <p>Before people sign up, they need to understand what will be expected.</p>
+    <ul>
+      <li>Rehearsal days and times</li>
+      <li>First cast meeting or table read</li>
+      <li>How many rehearsals will occur each week</li>
+      <li>Which rehearsals will be mandatory</li>
+      <li>Technical rehearsal date</li>
+      <li>Dress rehearsal date</li>
+      <li>Expected arrival time on performance day</li>
+      <li>How missed rehearsals will be handled</li>
+      <li>Whether scripts may leave the rehearsal area</li>
+      <li>How cast members will receive schedule updates</li>
+    </ul>
+
+    <p>We also need to work around:</p>
+    <ul class="two-column">
+      <li>Required classes</li>
+      <li>Church and program activities</li>
+      <li>Work schedules</li>
+      <li>Appointments</li>
+      <li>Curfews</li>
+      <li>Transportation</li>
+      <li>Childcare</li>
+      <li>Program phase requirements</li>
+    </ul>
+
+    <p>Participation should never be presented as more important than required program responsibilities. The schedule needs to be realistic for the people who live here.</p>
+  </div>
+
+  <div class="numbered-section">
+    <h3>5. Confirm Available Resources</h3>
+    <p>We need a realistic understanding of what we already have and what we still need.</p>
+    <ul>
+      <li>Is the Sanctuary confirmed for the performance?</li>
+      <li>When can it be used for rehearsals?</li>
+      <li>What microphones and sound equipment are available?</li>
+      <li>Can backgrounds or lyrics be projected?</li>
+      <li>Who is approved to operate the audiovisual equipment?</li>
+      <li>Where can props, costumes, and sets be stored?</li>
+      <li>What materials can Maintenance, the kitchen, the thrift store, or other departments provide?</li>
+      <li>Is there a budget?</li>
+      <li>Who must approve purchases?</li>
+      <li>Can materials be donated or borrowed?</li>
+      <li>Who will be responsible for returning the Sanctuary to its normal condition?</li>
+    </ul>
+    <p>The production should be designed around available resources. We should not create a plan that depends on expensive costumes, complicated scenery, or equipment we do not have.</p>
+  </div>
+
+  <div class="numbered-section">
+    <h3>6. Prepare the House Meeting Announcement</h3>
+    <p>The announcement should be exciting, but it also needs to be honest and specific.</p>
+    <ol>
+      <li>The name and date of the production</li>
+      <li>The purpose of the activity</li>
+      <li>Who may participate</li>
+      <li>The different cast and volunteer opportunities</li>
+      <li>The sign-up location</li>
+      <li>The sign-up deadline</li>
+      <li>The date and time of the first meeting</li>
+      <li>The expected commitment</li>
+      <li>The name of the participant contact person</li>
+    </ol>
+  </div>
+
+  <h2>Possible House Meeting Announcement</h2>
+
+  <div class="announcement">
+    <p>ECTLC is preparing a participant-led production of <em>The Wizard of Oz</em>, scheduled for July 17 in the Sanctuary. This production is open to men, women, families, and children of appropriate ages. No previous acting or singing experience is required.</p>
+
+    <p>We need actors, singers, ensemble members, stage crew, set builders, costume helpers, sound and audiovisual assistance, ushers, and volunteers for setup and cleanup.</p>
+
+    <p>This production will be planned and carried out by ECTLC participants. Anyone who signs up should be prepared to attend rehearsals, practice their assigned material, cooperate with the production team, and follow all normal program requirements.</p>
+
+    <p><strong>Sign-ups will be available at the Front Lobby through ____________________.</strong></p>
+
+    <p><strong>Our first production meeting will be held on ____________________ at ____________________.</strong></p>
+  </div>
+
+  <h2>Decisions We Need Before the Announcement</h2>
+
+  <ul class="checklist">
+    <li>Full or shortened production</li>
+    <li>Participant leadership team</li>
+    <li>Sign-up deadline</li>
+    <li>First meeting date</li>
+    <li>Basic rehearsal schedule</li>
+    <li>Audition process</li>
+    <li>Participation expectations</li>
+    <li>Available backstage and volunteer positions</li>
+    <li>Main participant contact</li>
+    <li>Staff approval and Sanctuary availability</li>
+  </ul>
+
+  <h2>Expected Results of the Planning Session</h2>
+
+  <ul class="checklist">
+    <li>A basic production plan</li>
+    <li>A list of participant leadership assignments</li>
+    <li>A sign-up form</li>
+    <li>A list of cast and volunteer opportunities</li>
+    <li>A preliminary rehearsal schedule</li>
+    <li>A finalized house meeting announcement</li>
+    <li>A date for the first full participant meeting</li>
+    <li>A list of questions or requests that need to be taken to staff</li>
+  </ul>
+
+  <div class="quote">
+    “What version of this production can ECTLC participants realistically organize, rehearse, and perform well by July 17?”
+  </div>
+
+  <p>I want this to be ambitious enough to be exciting, but simple and organized enough that the participants can truly own it and successfully carry it through.</p>
+
+  <div class="signature">
+    <div class="signature-name">Glenn</div>
+  </div>
+
+  <div class="footer-note">ECTLC Wizard of Oz Participant Planning Session</div>
+
+</div>
+</body>
+</html>

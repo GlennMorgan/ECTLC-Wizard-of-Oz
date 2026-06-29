@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECTLC Wizard of Oz Production Hub</title>
+<style>
+:root{--green:#0f5a3a;--dark-green:#083b27;--gold:#b98a24;--cream:#fbf8ef;--ink:#202620;--muted:#5f665f;--line:#d6cfbd;}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fffaf0,#f4f0df);line-height:1.45}
+header{background:linear-gradient(135deg,var(--dark-green),var(--green));color:white;border-bottom:6px solid var(--gold);padding:36px 18px;text-align:center}
+.eyebrow{color:#f4d37a;text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.9rem}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.4rem,6vw,4.4rem);margin:8px 0;line-height:1}
+.subtitle{max-width:820px;margin:0 auto;font-size:1.05rem}
+main{max-width:1120px;margin:0 auto;padding:22px 16px 46px}
+.notice{background:white;border:1px solid var(--line);border-left:7px solid var(--gold);border-radius:12px;padding:16px 18px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.card.feature{grid-column:1/-1}
+h2{color:var(--dark-green);font-family:Georgia,"Times New Roman",serif;margin:0 0 8px}
+p{margin:0 0 12px}
+a{display:inline-block;background:var(--green);color:white;text-decoration:none;font-weight:800;border-radius:999px;padding:9px 14px;margin:4px 6px 4px 0}
+a.secondary{background:var(--gold);color:#1f1808}
+.preview{width:100%;border:1px solid var(--line);border-radius:10px;margin:8px 0 12px;background:#f8f3e3}
+.small{color:var(--muted);font-size:.92rem}
+footer{text-align:center;color:var(--muted);padding:24px;border-top:1px solid var(--line)}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.card.feature{grid-column:auto}}
+@media print{a{color:var(--dark-green);background:none;padding:0}.card{box-shadow:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">ECTLC Participant-Led Production</div>
+  <h1>The Wizard of Oz</h1>
+  <p class="subtitle">Production hub for the revised script, storyboard pages, and committee planning materials.</p>
+</header>
+<main>
+  <section class="notice">
+    <h2>Production Documents</h2>
+    <p>This page is a simple GitHub Pages site. Upload these files to a GitHub repository, enable Pages from the repository settings, and this hub becomes the public link for the committee and participants.</p>
+    <p class="small">Last packaged: June 29, 2026 at 03:22 AM</p>
+  </section>
+  <section class="grid">
+    <article class="card feature">
+      <h2>Revised Interactive Script</h2>
+      <p>ECTLC-adapted script with scene navigation, role filters, search, print controls, and role-specific copies.</p>
+      <a href="revised-script.html">Open Revised Script</a>
+    </article>
+    <article class="card">
+      <h2>Storyboard Page 1</h2>
+      <p>Scenes 1 to 5: Kansas, Munchkinland, Scarecrow, Tin Man, and Lion.</p>
+      <img class="preview" src="assets/storyboard-page-1.png" alt="Storyboard page 1, scenes 1 to 5">
+      <a href="assets/storyboard-page-1.png">Open Page 1</a>
+    </article>
+    <article class="card">
+      <h2>Storyboard Page 2</h2>
+      <p>Scenes 6 to 10: Poppies, Emerald City, Witch's Castle, Wizard reveal, and Home.</p>
+      <img class="preview" src="assets/storyboard-page-2.png" alt="Storyboard page 2, scenes 6 to 10">
+      <a href="assets/storyboard-page-2.png">Open Page 2</a>
+    </article>
+    
+      <article class="card">
+        <h2>Planning Session Document</h2>
+        <p>Committee planning structure, house meeting announcement framework, and decision checklist.</p>
+        <a href="planning-session.html">Open Planning Document</a>
+      </article>
+
+    <article class="card">
+      <h2>Committee Use</h2>
+      <p>Recommended meeting flow: confirm performance date, approve the shortened production format, assign scene leads, assign props and costumes, finalize rehearsal schedule, and decide who maintains this site.</p>
+      <a class="secondary" href="README.md">Read Setup Notes</a>
+    </article>
+  </section>
+</main>
+<footer>ECTLC Wizard of Oz Production Hub</footer>
+</body>
+</html>
