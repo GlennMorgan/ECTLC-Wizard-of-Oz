@@ -3,162 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECTLC Wizard of Oz</title>
+<title>ECTLC Wizard of Oz Production Hub</title>
 <style>
-:root {
-  --green:#0f5a3a;
-  --dark-green:#083b27;
-  --gold:#b98a24;
-  --cream:#fbf8ef;
-  --ink:#202620;
-  --muted:#5f665f;
-  --line:#d6cfbd;
-}
-* { box-sizing:border-box; }
-body {
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  color:var(--ink);
-  background:linear-gradient(180deg,#fffaf0,#f4f0df);
-  line-height:1.45;
-}
-header {
-  background:linear-gradient(135deg,var(--dark-green),var(--green));
-  color:white;
-  border-bottom:6px solid var(--gold);
-  padding:38px 18px;
-  text-align:center;
-}
-.eyebrow {
-  color:#f4d37a;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:800;
-  font-size:.9rem;
-}
-h1 {
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:clamp(2.5rem,6vw,4.5rem);
-  margin:8px 0;
-  line-height:1;
-}
-.subtitle {
-  max-width:820px;
-  margin:0 auto;
-  font-size:1.08rem;
-}
-main {
-  max-width:1120px;
-  margin:0 auto;
-  padding:24px 16px 46px;
-}
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-}
-.card {
-  background:white;
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-.card.script {
-  grid-column:1/-1;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  align-items:center;
-  gap:16px;
-}
-h2 {
-  color:var(--dark-green);
-  font-family:Georgia, "Times New Roman", serif;
-  margin:0 0 8px;
-  font-size:1.75rem;
-}
-p { margin:0 0 14px; }
-a.button {
-  display:inline-block;
-  background:var(--green);
-  color:white;
-  text-decoration:none;
-  font-weight:800;
-  border-radius:999px;
-  padding:10px 16px;
-  margin-top:4px;
-}
-a.button:hover {
-  background:var(--dark-green);
-}
-.preview {
-  width:100%;
-  border:1px solid var(--line);
-  border-radius:12px;
-  background:#f8f3e3;
-  display:block;
-}
-.script-panel {
-  background:var(--cream);
-  border:1px solid var(--line);
-  border-left:7px solid var(--gold);
-  border-radius:14px;
-  padding:18px;
-}
-footer {
-  text-align:center;
-  color:var(--muted);
-  padding:24px;
-  border-top:1px solid var(--line);
-}
-@media(max-width:780px) {
-  .grid { grid-template-columns:1fr; }
-  .card.script { grid-column:auto; grid-template-columns:1fr; }
-}
-@media print {
-  .card { box-shadow:none; }
-  a.button { color:var(--dark-green); background:none; padding:0; }
-}
+:root{--green:#073d27;--green2:#0f5a3a;--gold:#d6a53a;--gold2:#f4d37a;--cream:#fff7df;--ink:#202620;--line:#d8c58b}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fff9e8,#efe0b3);line-height:1.45}
+.hero{position:relative;overflow:hidden;color:white;text-align:center;padding:54px 18px 66px;background:linear-gradient(135deg,#052d1d,#0f5a3a);border-bottom:7px solid var(--gold)}
+.hero:before,.hero:after{content:"";position:absolute;top:-15px;width:34%;height:130px;background:linear-gradient(180deg,#052d1d,#0e5c3a);border-bottom:5px solid var(--gold2);box-shadow:0 10px 24px #0006}
+.hero:before{left:-6%;border-bottom-right-radius:100% 50%;transform:rotate(-5deg)}
+.hero:after{right:-6%;border-bottom-left-radius:100% 50%;transform:rotate(5deg)}
+.hero-inner{position:relative;z-index:2;max-width:1060px;margin:auto}
+.eyebrow{display:inline-block;color:var(--gold2);text-transform:uppercase;letter-spacing:.16em;font-weight:900;border-top:1px solid var(--gold2);border-bottom:1px solid var(--gold2);padding:8px 14px;margin-bottom:12px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,8vw,6.5rem);line-height:.94;margin:0;text-shadow:0 4px 0 #0005}
+.tagline{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.25rem,2.5vw,2rem);margin:14px auto 8px;color:#fff3c4}
+.hero-copy{max-width:860px;margin:0 auto 20px;font-size:1.05rem}
+.btn{display:inline-block;text-decoration:none;font-weight:900;border-radius:999px;padding:12px 18px;border:2px solid var(--gold);margin:4px}
+.btn.primary{background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1c1608}
+.btn.secondary{background:#ffffff18;color:white}
+.main{max-width:1180px;margin:-44px auto 54px;padding:0 16px;position:relative;z-index:3}
+.welcome,.card,.note{background:#fffdf6;border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 34px #0002}
+.welcome{border-left:8px solid var(--gold);padding:20px 22px;margin-bottom:20px}
+h2.section{display:flex;gap:12px;align-items:center;margin:30px 0 14px;color:var(--green);font-family:Georgia,"Times New Roman",serif;font-size:2.15rem}
+h2.section:after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{overflow:hidden}.card-body{padding:18px}.card h3{color:var(--green);font-family:Georgia,"Times New Roman",serif;font-size:1.55rem;margin:0 0 8px}.card p{margin:0 0 14px}
+.preview{width:100%;display:block;aspect-ratio:11/8.5;object-fit:cover;background:#f4e8bd;border-bottom:1px solid var(--line)}
+.script-feature{grid-column:1/-1;display:grid;grid-template-columns:1.05fr .95fr}
+.script-panel{background:linear-gradient(135deg,var(--green),var(--green2));color:white;padding:28px;display:flex;flex-direction:column;justify-content:center}
+.script-panel h3{font-family:Georgia,"Times New Roman",serif;font-size:2.2rem;margin:0 0 8px}.script-panel p{color:#fff7dc}
+.pills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.pill{background:#fff8df;border:1px solid var(--line);border-radius:999px;padding:9px 12px;font-weight:800;color:var(--green)}
+.video-wrap{background:#0b1912;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 34px #0004}.video-ratio{position:relative;width:100%;aspect-ratio:16/9}.video-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.note{padding:18px;margin-top:18px} footer{background:var(--green);color:#fff5c9;text-align:center;padding:28px 18px;border-top:6px solid var(--gold)}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.script-feature{grid-template-columns:1fr}.main{margin-top:-28px}}
+@media(max-width:620px){.pills{grid-template-columns:1fr}.hero{padding-top:44px}}
 </style>
 </head>
 <body>
-<header>
-  <div class="eyebrow">ECTLC Participant-Led Production</div>
-  <h1>The Wizard of Oz</h1>
-  <p class="subtitle">Revised interactive script and storyboard pages for committee planning and rehearsal.</p>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">ECTLC Presents</div>
+    <h1>The Wizard of Oz</h1>
+    <p class="tagline">A participant-led production created for our ECTLC community</p>
+    <p class="hero-copy">This production hub was built so participants, staff, and outside volunteers can feel informed, invited, and part of something special from the very beginning.</p>
+    <a class="btn primary" href="#auditions">Start with Auditions</a>
+    <a class="btn secondary" href="revised-script.html">Open Interactive Script</a>
+    <a class="btn secondary" href="#storyboards">View Storyboards</a>
+  </div>
 </header>
 
-<main>
+<main class="main">
+  <section class="welcome">
+    <h2>Welcome to the Production Hub</h2>
+    <p>Watch the audition explainer, review the flyers, open the Interactive Script, and view the storyboard pages. Everything here is intended to help people understand the opportunity, choose where they fit, and participate with confidence.</p>
+  </section>
+
+  <h2 class="section" id="auditions">Audition Resources</h2>
   <section class="grid">
-    <article class="card script">
-      <div>
-        <h2>Revised Interactive Script</h2>
-        <p>Open the ECTLC-adapted script with scene navigation, role filters, search, print controls, and role-specific copies.</p>
-        <a class="button" href="revised-script.html">Open Revised Interactive Script</a>
-      </div>
-      <div class="script-panel">
-        <p><strong>Use this for:</strong> auditions, casting, rehearsal, scene review, role-specific printouts, and committee planning.</p>
-      </div>
-    </article>
-
     <article class="card">
-      <h2>Storyboard Page 1</h2>
-      <p>Scenes 1 to 5: Kansas, Munchkinland, Scarecrow, Tin Man, and Lion.</p>
-      <img class="preview" src="assets/storyboard-page-1.png" alt="Storyboard Page 1, scenes 1 to 5">
-      <a class="button" href="assets/storyboard-page-1.png">Open Storyboard Page 1</a>
+      <img class="preview" src="assets/auditions-are-open.jpeg" alt="Auditions Are Opening flyer">
+      <div class="card-body"><h3>Auditions Are Opening</h3><p>Audition dates, times, casting tracks, main character roles, QR code, and sign-up information.</p><a class="btn primary" href="assets/auditions-are-open.jpeg">Open Flyer</a></div>
     </article>
-
     <article class="card">
-      <h2>Storyboard Page 2</h2>
-      <p>Scenes 6 to 10: Poppies, Emerald City, Witch's Castle, Wizard reveal, and Home.</p>
-      <img class="preview" src="assets/storyboard-page-2.png" alt="Storyboard Page 2, scenes 6 to 10">
-      <a class="button" href="assets/storyboard-page-2.png">Open Storyboard Page 2</a>
+      <img class="preview" src="assets/how-auditions-work.jpeg" alt="How Auditions Work guide">
+      <div class="card-body"><h3>How Auditions Work</h3><p>A simple explanation of casting tracks, slash-separated roles, ensemble, and which audition day to attend.</p><a class="btn primary" href="assets/how-auditions-work.jpeg">Open Guide</a></div>
+    </article>
+    <article class="card">
+      <div class="card-body"><h3>Quick Audition Summary</h3><p><strong>Day 1:</strong> Ensemble, movement, and visual scene roles.</p><p><strong>Day 2:</strong> Supporting speaking roles, utility roles, and backstage support.</p><p><strong>Day 3:</strong> Main character auditions and final callbacks.</p><a class="btn primary" href="https://tinyurl.com/ECTLC-Wizard-of-Oz">Open Short Link</a></div>
     </article>
   </section>
-</main>
 
-<footer>
-  ECTLC Wizard of Oz
-</footer>
+  <h2 class="section" id="video">Audition Explainer Video</h2>
+  <section class="video-wrap"><div class="video-ratio"><iframe src="https://www.youtube.com/embed/fAMvbs4TfiE" title="ECTLC Wizard of Oz Audition Explainer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></section>
+
+  <h2 class="section" id="script">Interactive Script</h2>
+  <section class="card script-feature">
+    <div class="script-panel"><h3>Interactive Script</h3><p>Read scenes, filter by role, search text, jump between scenes, and print role-specific copies for rehearsal.</p><a class="btn primary" href="revised-script.html">Open Interactive Script</a></div>
+    <div class="card-body"><h3>Helpful for</h3><div class="pills"><div class="pill">Auditions</div><div class="pill">Casting</div><div class="pill">Rehearsals</div><div class="pill">Scene Planning</div><div class="pill">Role Printouts</div><div class="pill">Committee Review</div></div></div>
+  </section>
+
+  <h2 class="section" id="storyboards">Storyboards</h2>
+  <section class="grid">
+    <article class="card"><img class="preview" src="assets/storyboard-page-1.png" alt="Storyboard Page 1"><div class="card-body"><h3>Storyboard Page 1</h3><p>Scenes 1 to 5: Kansas, Munchkinland, Scarecrow, Tin Man, and Lion.</p><a class="btn primary" href="assets/storyboard-page-1.png">Open Page 1</a></div></article>
+    <article class="card"><img class="preview" src="assets/storyboard-page-2.png" alt="Storyboard Page 2"><div class="card-body"><h3>Storyboard Page 2</h3><p>Scenes 6 to 10: Poppies, Emerald City, Witch's Castle, Wizard reveal, and Home.</p><a class="btn primary" href="assets/storyboard-page-2.png">Open Page 2</a></div></article>
+    <article class="card"><div class="card-body"><h3>Production Message</h3><p>This is more than a performance. It is a chance for participants, staff, and volunteers to build something together, support one another, and bring the story to life.</p><a class="btn primary" href="#auditions">Back to Auditions</a></div></article>
+  </section>
+
+  <section class="note"><p><strong>Note:</strong> The production is pending final approval. Auditions and planning materials are being shared so the committee can organize interest, roles, and volunteer support responsibly.</p></section>
+</main>
+<footer>ECTLC Wizard of Oz Production Hub</footer>
 </body>
 </html>
